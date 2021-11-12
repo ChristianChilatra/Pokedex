@@ -1,0 +1,19 @@
+@import url(pokedex.css);
+
+:root {
+  --white: #fffffe;
+  --black: #300f16;
+  --primary: #dc0a2d;
+  --secondary: #163355;
+  --body1: 400 0.75rem/1.5rem Roboto;
+  --body3: 400 0.5rem/0.4556451737880707rem Roboto;
+  --body2-regular: 400 0.75rem/1.375rem Space Mono;
+}
+
+body{
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+}

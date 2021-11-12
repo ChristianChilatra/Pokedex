@@ -1,0 +1,21 @@
+@import url(pokemon.css);
+@import url(statistics.css);
+.containerPokedex {
+  block-size: 34rem;
+  inline-size: 100%;
+  max-inline-size: 24rem;
+  outline: none;
+  border-start-start-radius: 2rem;
+  border-end-start-radius: 2rem;
+  background: var(--primary);
+  position: relative;
+  perspective: 1000px;
+}
+
+.containerPokedex:is(:hover, :focus, :focus-within) .fontFace {
+  transform: rotateY(180deg);
+}
+
+.containerPokedex:is(:hover, :focus, :focus-within) .backFace {
+  transform: rotateY(0deg);
+}
