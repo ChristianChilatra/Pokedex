@@ -47,8 +47,8 @@ section {
   51% 12.5%, 52% 12.8%, 53% 13%, 54% 13.2%, /**/
   100% 13.2%, 100% 100%, 0 100%);
   border-end-end-radius: 2rem;
-  border-inline-start: 1px solid black;
-  border-block-end: 2px solid black;
+  border-inline-start: 4px solid var(--primary20);
+  border-block-end: 4px solid var(--primary20);
 }
 
 section::before {
