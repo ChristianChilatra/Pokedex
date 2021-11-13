@@ -1,0 +1,26 @@
+@import url(light-bulb.css);
+header {
+  block-size: 6rem;
+  border-start-start-radius: 2rem;
+  border-start-end-radius: 1rem;
+  position: relative;
+  background: var(--primary20);
+  clip-path: polygon(0 0, 100% 0, 100% 30%, /**/
+  68% 30%, 66% 31%, 65% 32%, 64% 34%, /**/
+  49% 94%, 48% 97%, 47% 98%, 46% 99%, /**/
+  0 100%);
+}
+
+header::before {
+  content: " ";
+  block-size: inherit;
+  inline-size: 100%;
+  background: var(--primary);
+  border-start-start-radius: 2rem;
+  border-start-end-radius: 1rem;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 20%, /**/
+  68% 20%, 66% 21%, 65% 22%, 64% 24%, /**/
+  49% 84%, 48% 87%, 47% 88%, 46% 89%, /**/
+  0 90%);
+}

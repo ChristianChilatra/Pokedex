@@ -4,14 +4,15 @@
   --black: #300f16;
   --primary: #fb0605;
   --primary20: #9b0506;
-  --secondary: #163355;
+  --secondary20: #163355;
+  --secondary: #05fafb;
   --body1: 400 0.75rem/1.5rem Roboto;
   --body3: 400 0.5rem/0.4556451737880707rem Roboto;
   --body2-regular: 400 0.75rem/1.375rem Space Mono;
 }
 
 body {
-  background: var(--secondary);
+  background: var(--secondary20);
   display: flex;
   justify-content: center;
   align-items: center;

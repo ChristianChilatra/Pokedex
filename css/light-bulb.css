@@ -1,0 +1,64 @@
+.ledMain {
+  background: #05fafb;
+  block-size: 4rem;
+  inline-size: 4rem;
+  border-radius: 50%;
+  position: relative;
+  inset-block-start: .8rem;
+  inset-inline-start: .8rem;
+  border: 8px solid white;
+  box-sizing: border-box;
+}
+
+.led {
+  inline-size: 1rem;
+  block-size: 1rem;
+  background: black;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.ledMain::before {
+  content: " ";
+  position: absolute;
+  inline-size: 1rem;
+  block-size: 1rem;
+  background: #9afbce;
+  inset-block-start: .4rem;
+  inset-inline-start: .5rem;
+  border-radius: 50%;
+}
+
+.leds {
+  position: absolute;
+  inline-size: 4rem;
+  block-size: 1rem;
+  inset-block-start: 1rem;
+  inset-inline-start: 5rem;
+  display: flex;
+  gap: .4rem;
+  justify-content: space-between;
+}
+
+.led::before {
+  content: " ";
+  position: absolute;
+  inline-size: .4rem;
+  block-size: .4rem;
+  background: #fa797d;
+  inset-block-start: .2rem;
+  inset-inline-start: .3rem;
+  border-radius: 50%;
+}
+
+.led.r {
+  background: #a33f40;
+}
+
+.led.y {
+  background: #fcfc04;
+}
+
+.led.g {
+  background: #52fa05;
+}
