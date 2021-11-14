@@ -15,7 +15,7 @@
 }
 
 .backFace {
-  border-inline-start: 1px solid black;
+  border-inline-start: 4px solid var(--primary20);
   inline-size: inherit;
   block-size: 32.8rem;
   background: var(--primary);
@@ -28,44 +28,43 @@
   border-end-end-radius: 2rem;
   transition: 1s transform;
   clip-path: polygon(/**/
-  0 0, 32% 0.4%, /**/
-  34% 0.7%, 36% 1.5%, 37% 2.2%, 38% 3%, /**/
+  0 0, 32% 0, /**/
+  34% 0.4%, 36% 1.5%, 37% 2.2%, 38% 3%, /**/
   51% 12.5%, 52% 12.8%, 53% 13%, 54% 13.2%, /**/
   100% 13.2%, 100% 100%, 0 100%);
 }
 
 section {
+  inline-size: calc(100% - 1rem);
   block-size: 31rem;
-  inline-size: 96%;
-  background: var(--primary);
-  position: relative;
-  inset-inline-start: .4rem;
-  inset-block-start: 1rem;
+  background: var(--primary20);
+  position: absolute;
+  inset-inline-start: .2rem;
+  inset-block-start: .8rem;
   clip-path: polygon(/**/
-  0 0, 32% 0.4%, /**/
-  34% 0.7%, 36% 1.5%, 37% 2.2%, 38% 3%, /**/
+  0 0, 32% 0, /**/
+  34% 0.5%, 36% 1.7%, 37% 2.4%, 38% 3%, /**/
   51% 12.5%, 52% 12.8%, 53% 13%, 54% 13.2%, /**/
-  100% 13.2%, 100% 100%, 0 100%);
-  border-end-end-radius: 2rem;
-  border-inline-start: 4px solid var(--primary20);
-  border-block-end: 4px solid var(--primary20);
+  100% 13.2%, /**/
+  100% 96.1%, /**/
+  99.5% 98%, 99% 98.5%, 98.5% 99%, 98% 99.2%, 97.5% 99.6%, 97% 99.8%, 96.5% 100%, /**/
+  0 100%);
 }
 
 section::before {
   content: " ";
-  inline-size: 100%;
-  block-size: inherit;
+  inline-size: 97.5%;
+  block-size: 97%;
   position: absolute;
-  background: var(--primary20);
+  background: var(--primary);
+  inset-block-start: .7rem;
+  inset-inline-start: .3rem;
   clip-path: polygon(/**/
-  0 0, 32% 0.4%, /**/
-  34% 0.7%, 36% 1.5%, 37% 2.2%, 38% 3%, /**/
+  0 0, 32% 0, /**/
+  34% 0.5%, 36% 1.7%, 37% 2.4%, 38% 3%, /**/
   51% 12.5%, 52% 12.8%, 53% 13%, 54% 13.2%, /**/
   100% 13.2%, /**/
-  100% 96%, /**/
-  97% 99%, /**/
-  97% 14.2%, /**/
-  52% 14.2%, 50% 13.5%, 49% 12.8%, 48% 12%, /**/
-  35% 2.8%, 34% 2.5%, 33% 2.2%, 32% 2%, /**/
-  0 1.5%);
+  100% 96.1%, /**/
+  99.5% 98%, 99% 98.5%, 98.5% 99%, 98% 99.2%, 97.5% 99.6%, 97% 99.8%, 96.5% 100%, /**/
+  0 100%);
 }
