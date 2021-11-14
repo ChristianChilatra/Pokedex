@@ -1,0 +1,70 @@
+.pokemon {
+  inline-size: 100%;
+  block-size: calc(100% - 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerPokemon {
+  position: relative;
+  inline-size: 22rem;
+  block-size: 15rem;
+  background: #6e6d6b;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 80%);
+  border-radius: .8rem;
+}
+
+.containerPokemon img {
+  position: relative;
+  z-index: 1;
+}
+
+.containerPokemon::before {
+  content: " ";
+  position: absolute;
+  inset-inline-start: .4rem;
+  inline-size: 21.5rem;
+  block-size: 14.6rem;
+  background: #b0b0b0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%, 0 80%);
+  border-radius: .8rem;
+}
+
+.showPokemon {
+  margin: auto;
+  inline-size: 19.5rem;
+  block-size: 9rem;
+  background: #f7f7f7;
+  position: relative;
+  inset-block-start: 1rem;
+  inset-inline-start: .2rem;
+  z-index: 1;
+  border-radius: .5rem;
+  border: 2px solid #757575;
+}
+
+.containerPokemon .containerOthers {
+  position: absolute;
+  z-index: 1;
+  inset-block-end: 1.5rem;
+  inset-inline-end: 1.5rem;
+  margin: auto;
+  inline-size: 16rem;
+  block-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resetView {
+  background: var(--primary20);
+  position: relative;
+  z-index: 1;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 1px solid black;
+  border-radius: 50%;
+}

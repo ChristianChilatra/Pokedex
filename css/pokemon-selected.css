@@ -1,0 +1,6 @@
+.containerSelected {
+  inline-size: 22rem;
+  block-size: 10rem;
+  background: var(--primary20);
+  border-radius: .5rem;
+}
