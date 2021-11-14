@@ -67,4 +67,5 @@
   block-size: 2rem;
   border: 1px solid black;
   border-radius: 50%;
+  cursor: pointer;
 }
