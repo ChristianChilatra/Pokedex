@@ -1,3 +1,6 @@
+import showLoader from "../loader-pokemon.js"
+import showMessage from "../message-pokemon.js"
+
 const BASE_API_ID = "https://pokeapi.co/api/v2/"
 const BASE_API_SPECIES = "https://pokeapi.co/api/v2/"
 
@@ -7,9 +10,19 @@ export async function getPokemonId(id){
     const response = await fetch(`${BASE_API_ID}pokemon/${id}`)
     const data = response.json()
 
-    return data
+    if (!response.ok) {
+      showLoader()
+    }
+    if (response.status === 404) {
+      showMessage()
+    }
+
+    if (response.ok) {
+      return data
+    }
 
   } catch (error) {
+    if(response.status)
     console.error("Error al obtener respuesta API");
     console.error(error);
   }

@@ -2,6 +2,7 @@ import { getPokemonId, getPokemonSpecies} from "./service/data.js"
 import showPokemon from "./show-pokemon.js"
 import showSpeciesPokemon from "./show-species-pokemon.js"
 
+
 const $formulario = document.querySelector("#form")
 
 getPokemon()
@@ -21,8 +22,8 @@ function  getPokemon() {
       console.error(`No se logro obtener Pokemon con el ID ${id}`);
       console.error(error);
     }
-
-    showPokemon(pokemonId.sprites.front_default)
+    
+    showPokemon(pokemonId)
     showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
   })
 }
