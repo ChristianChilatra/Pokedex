@@ -1,14 +1,18 @@
 @import url(pokedex.css);
 :root {
+  font-family: 'VT323', monospace;
   --white: #fffffe;
   --black: #300f16;
   --primary: #fb0605;
   --primary20: #9b0506;
+  --secondary30: #065053;
   --secondary20: #163355;
   --secondary: #05fafb;
-  --body1: 400 0.75rem/1.5rem Roboto;
-  --body3: 400 0.5rem/0.4556451737880707rem Roboto;
-  --body2-regular: 400 0.75rem/1.375rem Space Mono;
+  --tertiary: #6cb370;
+  --quaternary: #d8d712;
+  --body1: 400 1rem/1.5rem VT323;
+  --body3: 400 0.75rem/0.4556451737880707rem VT323;
+  --body2-regular: 400 1rem/1.375rem Space Mono;
 }
 
 body {

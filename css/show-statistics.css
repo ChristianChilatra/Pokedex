@@ -1,0 +1,45 @@
+.containerStatistics {
+  inline-size: 20rem;
+  block-size: 15rem;
+  background: var(--secondary20);
+  position: relative;
+  inset-block-start: 6rem;
+  margin: auto;
+  border-radius: .5rem;
+  border: 2px solid #4d4242;
+}
+
+.containerShowDialog {
+  inline-size: 16rem;
+  block-size: 5rem;
+  background: #2451a2;
+  position: relative;
+  margin: auto;
+  inset-block-start: 8rem;
+  border-radius: .5rem;
+  display: grid;
+  gap: .3rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0 0 6px 6px;
+}
+
+.showDialog {
+  background: #519cf9;
+}
+
+.showDialog:nth-child(1) {
+  border-start-start-radius: .3rem;
+}
+
+.showDialog:nth-child(5) {
+  border-start-end-radius: .3rem;
+}
+
+.showDialog:nth-child(6) {
+  border-end-start-radius: .3rem;
+}
+
+.showDialog:nth-child(10) {
+  border-end-end-radius: .3rem;
+}

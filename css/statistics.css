@@ -1,3 +1,4 @@
+@import url(show-statistics.css);
 .fontFace {
   cursor: pointer;
   inline-size: inherit;
@@ -8,7 +9,7 @@
   transform-origin: right center;
   backface-visibility: hidden;
   border-end-start-radius: 2rem;
-  transition: 1s transform;
+  transition: .8s transform;
   clip-path: polygon(/**/
   100% 0.4%, 68% 0.4%, 66% 0.7%, 64% 1.5%, 63% 2.2%, 62% 3%, /**/
   49% 12.5%, 48% 12.8%, 47% 13%, 46% 13.2%, /**/
@@ -28,7 +29,7 @@
   transform: rotateY(-180deg);
   backface-visibility: hidden;
   border-end-end-radius: 2rem;
-  transition: 1s transform;
+  transition: .8s transform;
   clip-path: polygon(/**/
   0 0, 32% 0, /**/
   34% 0.4%, 36% 1.5%, 37% 2.2%, 38% 3%, /**/

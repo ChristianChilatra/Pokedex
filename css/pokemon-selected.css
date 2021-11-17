@@ -1,6 +1,58 @@
+@import url(pokemon-switch.css);
 .containerSelected {
   inline-size: 22rem;
   block-size: 10rem;
   background: var(--primary20);
   border-radius: .5rem;
+  border: 2px solid #751111;
+  position: relative;
+  padding: .8rem;
+  box-sizing: border-box;
+}
+
+.selectedPokemon {
+  inline-size: 12rem;
+  block-size: 2rem;
+  background: var(--tertiary);
+  border: 1px solid #2e2b2b;
+  border-radius: .4rem;
+  padding-inline-start: 1rem;
+  user-select: none;
+  outline: none;
+  box-sizing: border-box;
+  color: black;
+  font: var(--body1);
+}
+
+.selectedPokemon::placeholder {
+  color: black;
+  font: var(--body1);
+}
+
+.pokemonInfo {
+  inline-size: 12rem;
+  block-size: 5rem;
+  background: var(--quaternary);
+  border: 1px solid #2e2b2b;
+  border-radius: .4rem;
+  margin-block-start: .5rem;
+  padding: .2rem;
+  user-select: none;
+  outline: none;
+  box-sizing: border-box;
+  font: var(--body1);
+}
+
+.pokemonInfo::-webkit-scrollbar {
+  display: none;
+}
+
+.pokemonSwitch {
+  display: grid;
+  grid-template-columns: repeat(3, 1.5rem);
+  grid-template-rows: repeat(3, 1.5rem);
+  position: absolute;
+  inset-block-start: 2rem;
+  inset-inline-end: 2rem;
+  grid-template-areas: ". up .""left center rigth"". down .";
 }

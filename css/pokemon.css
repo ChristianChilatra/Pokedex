@@ -44,6 +44,8 @@
   z-index: 1;
   border-radius: .5rem;
   border: 2px solid #757575;
+  display: flex;
+  justify-content: center;
 }
 
 .containerPokemon .containerOthers {

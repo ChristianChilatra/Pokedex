@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <title>POKEDEX</title>
 </head>
+
 <body>
   <div class="containerPokedex" tabindex="0">
     <header>
@@ -20,6 +25,7 @@
     <main class="pokemon">
       <div class="containerPokemon">
         <div class="showPokemon">
+          <img src="" alt="" srcset="">
         </div>
         <div class="containerOthers">
           <button class="resetView"></button>
@@ -27,12 +33,42 @@
         </div>
       </div>
       <div class="containerSelected">
+        <form role="search" id="form" class="search">
+          <input type="text" name="selectedPokemon" class="selectedPokemon" id="selectedPokemon"
+            placeholder="¿Quién es ese pokemon?">
+        </form>
+        <textarea class="pokemonInfo" name="pokemonInfo" id="pokemonInfo" cols="30" rows="10"></textarea>
+        <div class="pokemonSwitch">
+          <button class="button up"><img src="icon/arrow-up.svg" alt="arrow up" width="10px" height="10px"></button>
+          <button class="button left"><img src="icon/arrow-left.svg" alt="arrow left" width="10px"
+              height="10px"></button>
+          <button class="button center"></button>
+          <button class="button rigth"><img src="icon/arrow-rigth.svg" alt="arrow rigth" width="10px"
+              height="10px"></button>
+          <button class="button down"><img src="icon/arrow-down.svg" alt="arrow down" width="10px"
+              height="10px"></button>
+        </div>
       </div>
     </main>
-      <div class="backFace" >
-        <section></section>
-      </div>
-      <div class="fontFace">front</div>
+    <div class="backFace">
+      <section>
+        <div class="containerStatistics"></div>
+        <div class="containerShowDialog">
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+          <div class="showDialog"></div>
+        </div>
+      </section>
+    </div>
+    <div class="fontFace">front</div>
   </div>
 </body>
+<script type="module" src="js/index.js"></script>
 </html>

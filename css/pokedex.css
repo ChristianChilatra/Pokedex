@@ -2,7 +2,6 @@
 @import url(pokemon-selected.css);
 @import url(header.css);
 @import url(statistics.css);
-
 .containerPokedex {
   block-size: 34rem;
   inline-size: 100%;

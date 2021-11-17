@@ -1,0 +1,45 @@
+button {
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+.button.up {
+  grid-area: up;
+  background: var(--secondary20);
+  border-start-start-radius: .2rem;
+  border-start-end-radius: .2rem;
+  box-shadow: -3px 0px 0px 0px var(--secondary30);
+}
+
+.button.left {
+  grid-area: left;
+  background: var(--secondary20);
+  border-start-start-radius: .2rem;
+  border-end-start-radius: .2rem;
+  box-shadow: -3px 0px 0px 0px var(--secondary30);
+}
+
+.button.center {
+  grid-area: center;
+  background: var(--secondary20);
+}
+
+button.center:active {
+  transform: none;
+}
+
+.button.rigth {
+  grid-area: rigth;
+  background: var(--secondary20);
+}
+
+.button.down {
+  grid-area: down;
+  background: var(--secondary20);
+  box-shadow: -3px 0px 0px 0px var(--secondary30);
+}
