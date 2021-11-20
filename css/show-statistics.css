@@ -7,6 +7,13 @@
   margin: auto;
   border-radius: .5rem;
   border: 2px solid #4d4242;
+  display: flex;
+  justify-content: center;
+}
+
+#stats{
+  width: 240px !important;
+  height: 240px !important;
 }
 
 .containerShowDialog {

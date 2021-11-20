@@ -1,9 +1,14 @@
 import { getPokemonId, getPokemonSpecies } from "./service/data.js"
 import { showPokemon } from "./show-pokemon.js"
 import showSpeciesPokemon from "./show-species-pokemon.js"
+import {setStats} from "./show-stats.js"
 
 
 const $formulario = document.querySelector("#form")
+
+const ctx = document.getElementById('stats').getContext('2d');
+let myChart = new Chart(ctx,{})
+myChart.destroy()
 
 let counter
 let id
@@ -25,6 +30,9 @@ $formulario.addEventListener("submit", async (event) => {
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies)
 
+  myChart.destroy()
+  myChart = new Chart(ctx,setStats(pokemonId))
+
 })
 
 const $navegation = document.querySelector(".pokemonSwitch")
@@ -32,12 +40,34 @@ const $buttonUp = $navegation.querySelector(".button.up")
 const $buttonDown = $navegation.querySelector(".button.down")
 const $buttonLeft = $navegation.querySelector(".button.left")
 const $buttonRigth = $navegation.querySelector(".button.rigth")
+const $buttonReset = document.querySelector(".resetView")
 
 $buttonUp.addEventListener("click", nextColorPokemon)
 $buttonDown.addEventListener("click", prevColorPokemon)
 $buttonLeft.addEventListener("click", prevPokemon)
 $buttonRigth.addEventListener("click", nextPokemon)
+$buttonReset.addEventListener("click", randomPokemon)
 
+
+async function randomPokemon() {
+
+  id = Math.floor(Math.random()* 899)
+
+  const { pokemonId, pokemonSpecies } = await getPokemon(id)
+
+  responseId = pokemonId
+  responseSpecies = pokemonSpecies
+
+  counter = 0
+
+  showPokemon(pokemonId, counter)
+  showSpeciesPokemon(pokemonSpecies)
+
+  myChart.destroy()
+  myChart = new Chart(ctx,setStats(pokemonId))
+
+  $formulario.querySelector("#selectedPokemon").value = `${id}`
+}
 
 function nextColorPokemon() {
   if (counter >= Object.values(responseId.sprites).filter(el => typeof(el) === "string").length - 1) {
@@ -70,6 +100,9 @@ async function nextPokemon (){
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies)
 
+  myChart.destroy()
+  myChart = new Chart(ctx,setStats(pokemonId))
+
   $formulario.querySelector("#selectedPokemon").value = `${id}`
 
 }
@@ -91,6 +124,9 @@ async function prevPokemon (){
 
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies)
+  
+  myChart.destroy()
+  myChart = new Chart(ctx,setStats(pokemonId))
 
   $formulario.querySelector("#selectedPokemon").value = `${id}`
 }
