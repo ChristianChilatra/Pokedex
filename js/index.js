@@ -1,31 +1,108 @@
-import { getPokemonId, getPokemonSpecies} from "./service/data.js"
-import {showPokemon} from "./show-pokemon.js"
+import { getPokemonId, getPokemonSpecies } from "./service/data.js"
+import { showPokemon } from "./show-pokemon.js"
 import showSpeciesPokemon from "./show-species-pokemon.js"
 
 
 const $formulario = document.querySelector("#form")
 
-getPokemon()
+let counter
+let id
+let { responseId, responseSpecies } = {}
 
-function  getPokemon() {
+$formulario.addEventListener("submit", async (event) => {
 
-  $formulario.addEventListener("submit", async (event) =>{
-    event.preventDefault()
-    const form = new FormData($formulario)
-    const id = form.get("selectedPokemon")
+  event.preventDefault()
+  const form = new FormData($formulario)
+  id = form.get("selectedPokemon")
 
-    try {
-      const pokemonId = await getPokemonId(id)
-      const pokemonSpecies = await getPokemonSpecies(id)
+  const { pokemonId, pokemonSpecies } = await getPokemon(id)
 
-      showPokemon(pokemonId)
-      showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+  responseId = pokemonId
+  responseSpecies = pokemonSpecies
 
-    } catch (error) {
-      console.error(`No se logro obtener Pokemon con el ID ${id}`);
-      console.error(error);
-    }
+  counter = 1
 
-  })
+  showPokemon(pokemonId, counter)
+  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
 
+})
+
+const $navegation = document.querySelector(".pokemonSwitch")
+const $buttonUp = $navegation.querySelector(".button.up")
+const $buttonDown = $navegation.querySelector(".button.down")
+const $buttonLeft = $navegation.querySelector(".button.left")
+const $buttonRigth = $navegation.querySelector(".button.rigth")
+
+$buttonUp.addEventListener("click", nextColorPokemon)
+$buttonDown.addEventListener("click", prevColorPokemon)
+$buttonLeft.addEventListener("click", prevPokemon)
+$buttonRigth.addEventListener("click", nextPokemon)
+
+
+function nextColorPokemon() {
+  if (counter >= Object.values(responseId.sprites).length - 1) {
+    counter = Object.values(responseId.sprites).length - 1
+  }else{
+    counter++
+  }
+  showPokemon(responseId, counter)
+}
+function prevColorPokemon() {
+  if (counter <= 0) {
+    counter = 0
+  }else{
+    counter--
+  }
+  showPokemon(responseId, counter)
+}
+
+async function nextPokemon (){
+
+  id++
+
+  const { pokemonId, pokemonSpecies } = await getPokemon(id)
+
+  responseId = pokemonId
+  responseSpecies = pokemonSpecies
+
+  counter = 1
+
+  showPokemon(pokemonId, counter)
+  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+}
+
+async function prevPokemon (){
+
+  id--
+
+  if (id <= 0) {
+    id = 1
+  }
+
+  const { pokemonId, pokemonSpecies } = await getPokemon(id)
+
+  responseId = pokemonId
+  responseSpecies = pokemonSpecies
+
+  counter = 1
+
+  showPokemon(pokemonId, counter)
+  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+}
+
+async function getPokemon(id) {
+
+  let pokemonId
+  let pokemonSpecies
+
+  try {
+    pokemonId = await getPokemonId(id)
+    pokemonSpecies = await getPokemonSpecies(id)
+
+  } catch (error) {
+    console.error(`No se logro obtener Pokemon con el ID ${id}`);
+    console.error(error);
+  }
+
+  return { pokemonId, pokemonSpecies }
 }
