@@ -34,7 +34,7 @@ export function setStats(pokemonId) {
                     pointLabels: {
                         color: 'white',
                         font: {
-                            size: 23,
+                            size: 22,
                             family: 'VT323'
                         }
                     },
