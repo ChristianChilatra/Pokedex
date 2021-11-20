@@ -6,13 +6,12 @@ const BASE_API_SPECIES = "https://pokeapi.co/api/v2/"
 
 export async function getPokemonId(id){
 
+  showLoader()
+  
   try {
     const response = await fetch(`${BASE_API_ID}pokemon/${id}`)
     const data = response.json()
 
-    if (!response.ok) {
-      showLoader()
-    }
     if (response.status === 404) {
       showMessage()
     }
