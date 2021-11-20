@@ -11,8 +11,8 @@ let { responseId, responseSpecies } = {}
 
 $formulario.addEventListener("submit", async (event) => {
 
-  event.preventDefault()
   const form = new FormData($formulario)
+  event.preventDefault()
   id = form.get("selectedPokemon")
 
   const { pokemonId, pokemonSpecies } = await getPokemon(id)
@@ -20,7 +20,7 @@ $formulario.addEventListener("submit", async (event) => {
   responseId = pokemonId
   responseSpecies = pokemonSpecies
 
-  counter = 1
+  counter = 0
 
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
@@ -40,8 +40,8 @@ $buttonRigth.addEventListener("click", nextPokemon)
 
 
 function nextColorPokemon() {
-  if (counter >= Object.values(responseId.sprites).length - 1) {
-    counter = Object.values(responseId.sprites).length - 1
+  if (counter >= Object.values(responseId.sprites).filter(el => typeof(el) === "string").length - 1) {
+    counter = Object.values(responseId.sprites).filter(el => typeof(el) === "string").length - 1
   }else{
     counter++
   }
@@ -65,10 +65,13 @@ async function nextPokemon (){
   responseId = pokemonId
   responseSpecies = pokemonSpecies
 
-  counter = 1
+  counter = 0
 
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+
+  $formulario.querySelector("#selectedPokemon").value = `${id}`
+
 }
 
 async function prevPokemon (){
@@ -84,10 +87,12 @@ async function prevPokemon (){
   responseId = pokemonId
   responseSpecies = pokemonSpecies
 
-  counter = 1
+  counter = 0
 
   showPokemon(pokemonId, counter)
   showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+
+  $formulario.querySelector("#selectedPokemon").value = `${id}`
 }
 
 async function getPokemon(id) {
