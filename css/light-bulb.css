@@ -10,6 +10,16 @@
   box-sizing: border-box;
 }
 
+.ledMain.is-animated{
+  animation: light .3s infinite;
+}
+
+@keyframes light {  
+  0% {background: var(--white);}
+   50% { background: #05fafb;}
+  100% { background: var(--white)}
+}
+
 .led {
   inline-size: 1rem;
   block-size: 1rem;

@@ -23,7 +23,7 @@ $formulario.addEventListener("submit", async (event) => {
   counter = 0
 
   showPokemon(pokemonId, counter)
-  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+  showSpeciesPokemon(pokemonSpecies)
 
 })
 
@@ -68,7 +68,7 @@ async function nextPokemon (){
   counter = 0
 
   showPokemon(pokemonId, counter)
-  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+  showSpeciesPokemon(pokemonSpecies)
 
   $formulario.querySelector("#selectedPokemon").value = `${id}`
 
@@ -90,7 +90,7 @@ async function prevPokemon (){
   counter = 0
 
   showPokemon(pokemonId, counter)
-  showSpeciesPokemon(pokemonSpecies.flavor_text_entries)
+  showSpeciesPokemon(pokemonSpecies)
 
   $formulario.querySelector("#selectedPokemon").value = `${id}`
 }
